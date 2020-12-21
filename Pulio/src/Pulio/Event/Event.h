@@ -2,9 +2,6 @@
 
 #include "Pulio/Core.h"
 
-#include <functional>
-#include <iostream>
-
 namespace Pulio {
 
 	enum class EventType

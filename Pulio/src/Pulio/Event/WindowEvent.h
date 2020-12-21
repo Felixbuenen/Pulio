@@ -3,8 +3,6 @@
 #include "Pulio/Core.h"
 #include "Event.h"
 
-#include <sstream>
-
 namespace Pulio {
 
 	// event raised whenever the window gets resized

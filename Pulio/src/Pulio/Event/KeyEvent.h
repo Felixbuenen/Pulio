@@ -3,10 +3,6 @@
 #include "Pulio/Core.h"
 #include "Event.h"
 
-#include <sstream>
-
-// 	KeyPressed, KeyReleased
-
 namespace Pulio {
 
 	// abstract key event

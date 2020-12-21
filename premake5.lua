@@ -12,6 +12,9 @@ project "Pulio"
    targetdir ("bin/" .. outputdir .. "/%{prj.name}/")
    objdir ("bin-int/" .. outputdir .. "/%{prj.name}/")
 
+   pchheader "plpch.h"
+   pchsource "%{prj.name}/src/plpch.cpp"
+
    files 
    { 
        "%{prj.name}/src/**.h", 

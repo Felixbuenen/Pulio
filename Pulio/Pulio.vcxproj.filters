@@ -37,6 +37,7 @@
     <ClInclude Include="src\Pulio\Log.h">
       <Filter>Pulio</Filter>
     </ClInclude>
+    <ClInclude Include="src\plpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pulio\Application.cpp">
@@ -45,5 +46,6 @@
     <ClCompile Include="src\Pulio\Log.cpp">
       <Filter>Pulio</Filter>
     </ClCompile>
+    <ClCompile Include="src\plpch.cpp" />
   </ItemGroup>
 </Project>
