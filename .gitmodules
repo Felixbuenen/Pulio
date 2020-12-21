@@ -1,0 +1,3 @@
+[submodule "Pulio/3rdparty/spdlog"]
+	path = Pulio/3rdparty/spdlog
+	url = https://github.com/gabime/spdlog

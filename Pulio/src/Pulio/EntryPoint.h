@@ -5,6 +5,8 @@ extern Pulio::Application* Pulio::CreateApplication();
 
 int main()
 {
+	Pulio::Log::Init();
+
 	auto app = Pulio::CreateApplication();
 	app->Run();
 	delete app;

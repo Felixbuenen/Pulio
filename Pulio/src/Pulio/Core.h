@@ -10,3 +10,6 @@
 #else 
 	#error Pulio only supports windows!
 #endif
+
+// helper to set xth bit
+#define BIT(x) 1 << x
