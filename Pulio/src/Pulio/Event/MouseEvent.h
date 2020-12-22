@@ -78,7 +78,7 @@ namespace Pulio {
 		}
 
 	private:
-		float m_btnCode;
+		int m_btnCode;
 	};
 
 	// event raised whenever a clicked mouse button was released
@@ -103,6 +103,6 @@ namespace Pulio {
 		}
 
 	private:
-		float m_btnCode;
+		int m_btnCode;
 	};
 }

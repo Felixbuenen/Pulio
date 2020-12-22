@@ -43,13 +43,13 @@ namespace Pulio {
 			: m_Event(event) {}
 
 		template<typename T>
-		bool Dispatch(EventHandler<T>& eventHandler)
+		bool Dispatch(EventHandler<T> eventHandler)
 		{
 			// check if event handler type is same type as m_Event
 			if (m_Event.GetEventType() == T::GetEventTypeStatic())
 			{
 				// cast Event to specific event type and execute function
-				return eventHandler(static_cast<T>(m_event)); // static cast may not work. if not, replace with (*(T*)&m_event)
+				return eventHandler(*(T*)(&m_Event));
 			}
 		}
 
@@ -57,8 +57,8 @@ namespace Pulio {
 		Event& m_Event;
 	};
 
-	// todo: create a global function that can print Events in a << stream
-	std::ostream& operator<<(std::ostream& output, const Event& e) {
+	// inline it so that the compiler knows this is the correct function implementation
+	inline std::ostream& operator<<(std::ostream& output, const Event& e) {
 		output << e.ToString();
 		return output;
 	}

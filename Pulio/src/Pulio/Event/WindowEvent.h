@@ -9,7 +9,7 @@ namespace Pulio {
 	class WindowResizedEvent : public Event
 	{
 	public:
-		WindowResizedEvent(const float& w, const float& h) 
+		WindowResizedEvent(const int& w, const int& h) 
 			: m_width(w), m_height(h) { }
 
 		virtual EventType GetEventType() const override { return EventType::WindowResized; }
@@ -24,11 +24,11 @@ namespace Pulio {
 			return ss.str();
 		}
 
-		float GetWidth() const { return m_width; }
-		float GetHeight() const { return m_height; }
+		int GetWidth() const { return m_width; }
+		int GetHeight() const { return m_height; }
 
 	private:
-		float m_width, m_height;
+		int m_width, m_height;
 	};
 
 	// event raised whenever the window is closed
@@ -47,7 +47,7 @@ namespace Pulio {
 	class WindowMovedEvent : public Event
 	{
 	public:
-		WindowMovedEvent(const float& xOffset, const float& yOffset) 
+		WindowMovedEvent(const int& xOffset, const int& yOffset) 
 			: m_xOffset(xOffset), m_yOffset(yOffset) { }
 
 		virtual EventType GetEventType() const override { return EventType::WindowMoved; }
@@ -55,10 +55,10 @@ namespace Pulio {
 		virtual EventClass GetClassType() const override { return EventClass::WindowEvent; }
 		virtual const char* GetEventName() const override { return "WindowMovedEvent"; }
 
-		float GetXOffset() const { return m_xOffset; }
-		float GetYOffset() const { return m_yOffset; }
+		int GetXOffset() const { return m_xOffset; }
+		int GetYOffset() const { return m_yOffset; }
 
 	private:
-		float m_xOffset, m_yOffset;
+		int m_xOffset, m_yOffset;
 	};
 }
