@@ -10,6 +10,9 @@
     <Filter Include="Pulio">
       <UniqueIdentifier>{2EAAE80D-9ABE-10BF-6340-B41ECF130DF0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pulio\Core">
+      <UniqueIdentifier>{465BA9FA-3213-EB47-9B1A-C4A387F18538}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Pulio\Event">
       <UniqueIdentifier>{FF95FC4F-6B4B-7545-F43F-6F1C60F46B49}</UniqueIdentifier>
     </Filter>
@@ -19,14 +22,20 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Pulio.h" />
-    <ClInclude Include="src\Pulio\Application.h">
-      <Filter>Pulio</Filter>
+    <ClInclude Include="src\Pulio\Core\Application.h">
+      <Filter>Pulio\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Pulio\Core.h">
-      <Filter>Pulio</Filter>
+    <ClInclude Include="src\Pulio\Core\Core.h">
+      <Filter>Pulio\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Pulio\EntryPoint.h">
-      <Filter>Pulio</Filter>
+    <ClInclude Include="src\Pulio\Core\EntryPoint.h">
+      <Filter>Pulio\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pulio\Core\Log.h">
+      <Filter>Pulio\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pulio\Core\Window.h">
+      <Filter>Pulio\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Pulio\Event\ApplicationEvent.h">
       <Filter>Pulio\Event</Filter>
@@ -43,10 +52,10 @@
     <ClInclude Include="src\Pulio\Event\WindowEvent.h">
       <Filter>Pulio\Event</Filter>
     </ClInclude>
-    <ClInclude Include="src\Pulio\Log.h">
+    <ClInclude Include="src\Pulio\Layer.h">
       <Filter>Pulio</Filter>
     </ClInclude>
-    <ClInclude Include="src\Pulio\Window.h">
+    <ClInclude Include="src\Pulio\LayerStack.h">
       <Filter>Pulio</Filter>
     </ClInclude>
     <ClInclude Include="src\plpch.h" />
@@ -55,10 +64,13 @@
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\Pulio\Application.cpp">
-      <Filter>Pulio</Filter>
+    <ClCompile Include="src\Pulio\Core\Application.cpp">
+      <Filter>Pulio\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Pulio\Log.cpp">
+    <ClCompile Include="src\Pulio\Core\Log.cpp">
+      <Filter>Pulio\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pulio\LayerStack.cpp">
       <Filter>Pulio</Filter>
     </ClCompile>
     <ClCompile Include="src\plpch.cpp" />

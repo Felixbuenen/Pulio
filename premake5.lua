@@ -105,12 +105,15 @@ project "Sandbox"
  
      filter "configurations:Debug"
          defines "PL_DEBUG"
+         buildoptions "/MDd"
          symbols "on"
  
      filter "configurations:Release"
          defines "PL_RELEASE"
+         buildoptions "/MD"
          optimize "on"
  
      filter "configurations:Dist"
          defines "PL_DIST"
+         buildoptions "/MD"
          optimize "on"

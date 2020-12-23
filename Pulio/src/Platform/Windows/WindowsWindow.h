@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Pulio/Window.h"
+#include "Pulio/Core/Window.h"
 
 struct GLFWwindow;
 

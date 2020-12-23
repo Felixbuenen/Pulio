@@ -81,7 +81,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>PL_PLATFORM_WINDOWS;PL_BUILD_DLL;PL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;3rdparty\spdlog\include;3rdparty\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
@@ -154,22 +154,25 @@
   <ItemGroup>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Pulio.h" />
-    <ClInclude Include="src\Pulio\Application.h" />
-    <ClInclude Include="src\Pulio\Core.h" />
-    <ClInclude Include="src\Pulio\EntryPoint.h" />
+    <ClInclude Include="src\Pulio\Core\Application.h" />
+    <ClInclude Include="src\Pulio\Core\Core.h" />
+    <ClInclude Include="src\Pulio\Core\EntryPoint.h" />
+    <ClInclude Include="src\Pulio\Core\Log.h" />
+    <ClInclude Include="src\Pulio\Core\Window.h" />
     <ClInclude Include="src\Pulio\Event\ApplicationEvent.h" />
     <ClInclude Include="src\Pulio\Event\Event.h" />
     <ClInclude Include="src\Pulio\Event\KeyEvent.h" />
     <ClInclude Include="src\Pulio\Event\MouseEvent.h" />
     <ClInclude Include="src\Pulio\Event\WindowEvent.h" />
-    <ClInclude Include="src\Pulio\Log.h" />
-    <ClInclude Include="src\Pulio\Window.h" />
+    <ClInclude Include="src\Pulio\Layer.h" />
+    <ClInclude Include="src\Pulio\LayerStack.h" />
     <ClInclude Include="src\plpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
-    <ClCompile Include="src\Pulio\Application.cpp" />
-    <ClCompile Include="src\Pulio\Log.cpp" />
+    <ClCompile Include="src\Pulio\Core\Application.cpp" />
+    <ClCompile Include="src\Pulio\Core\Log.cpp" />
+    <ClCompile Include="src\Pulio\LayerStack.cpp" />
     <ClCompile Include="src\plpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

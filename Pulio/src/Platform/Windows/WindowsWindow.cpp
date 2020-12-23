@@ -3,7 +3,7 @@
 
 #include "GLFW/glfw3.h"
 
-#include "Pulio/Log.h"
+#include "Pulio/Core/Log.h"
 #include "Pulio/Event/KeyEvent.h"
 #include "Pulio/Event/MouseEvent.h"
 #include "Pulio/Event/WindowEvent.h"
@@ -63,9 +63,16 @@ namespace Pulio {
 
 	void WindowsWindow::OnClose()
 	{
+		PULIO_LOG_WARNING("trying to delete windows window");
 		delete glfwGetWindowUserPointer(m_Window);
+		PULIO_LOG_WARNING("ptr deleted");
+
 		glfwDestroyWindow(m_Window);
+		PULIO_LOG_WARNING("window destroyed");
+
 		glfwTerminate();
+		PULIO_LOG_WARNING("window termination succesful");
+
 	}
 
 	void WindowsWindow::SetCallbackMethod(const WindowEventCallback& callbackMethod)

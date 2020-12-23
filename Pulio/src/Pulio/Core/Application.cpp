@@ -2,9 +2,10 @@
 #include "Application.h"
 
 #include "Log.h"
-#include "Event/Event.h"
-#include "Event/WindowEvent.h"
+#include "Pulio/Event/Event.h"
+#include "Pulio/Event/WindowEvent.h"
 #include "Window.h"
+#include "Pulio/Layer.h"
 
 #include "GLFW/glfw3.h"
 
@@ -15,6 +16,7 @@ namespace Pulio {
 		PULIO_LOG_WARNING("Starting the application...");
 
 		m_running = true;
+		m_layerStack = std::unique_ptr<LayerStack>(new LayerStack());
 
 		// initialize window and bind event handling
 		WindowProperties props("Pulio Game Engine", 1280, 720);
@@ -34,13 +36,30 @@ namespace Pulio {
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			m_Window->OnUpdate();
+
+			// update layers
+			for (auto rIt = m_layerStack->Begin(); rIt != m_layerStack->End(); ++rIt)
+			{
+				(*rIt)->OnUpdate();
+			}
 		}
+	}
+
+	void Application::PushLayer(Layer* layer)
+	{
+		m_layerStack->PushLayer(layer);
 	}
 
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowClosedEvent>(std::bind(&Application::OnWindowCloseEvent, this, std::placeholders::_1));
+
+		// inform layers about events
+		for (auto rIt = m_layerStack->RBegin(); rIt != m_layerStack->REnd(); ++rIt)
+		{
+			(*rIt)->OnEvent(e);
+		}
 	}
 
 	bool Application::OnWindowCloseEvent(WindowClosedEvent& e)

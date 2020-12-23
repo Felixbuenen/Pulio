@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Pulio/Core.h"
+#include "Pulio/Core/Core.h"
 
 namespace Pulio {
 
