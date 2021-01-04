@@ -22,15 +22,9 @@
 #endif
 
 // assertion helper
-// TODO: add option to enable/disable asserts
 // TODO: add a macro to print 'assertion failed' log
 #if PL_DEBUG
-#define PL_ASSERT(condition, errorMsg, ...) { \
-	if(!(condition)) { \
-		PULIO_LOG_ERROR(errorMsg, __VA_ARGS__); \
-		PL_DEBUG_BREAK; \
-	} \
-}
+#define PL_ASSERT(condition, ...) { if(!(condition)) { PULIO_LOG_ERROR(__VA_ARGS__); PL_DEBUG_BREAK; } }
 #else
 #define PL_ASSERT(...)
 #endif

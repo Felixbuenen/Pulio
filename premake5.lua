@@ -5,6 +5,7 @@ workspace "Pulio"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 include "Pulio/3rdparty/GLFW"
+include "Pulio/3rdparty/Glad"
 
 project "Pulio"
    location "Pulio"
@@ -28,12 +29,14 @@ project "Pulio"
    {
        "Pulio/src",
        "Pulio/3rdparty/spdlog/include",
-       "Pulio/3rdparty/GLFW/include"
+       "Pulio/3rdparty/GLFW/include",
+       "Pulio/3rdparty/glad/include"
    }
 
    links
    {
        "GLFW",
+       "Glad",
        "opengl32.lib"
    }
 

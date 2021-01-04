@@ -1,6 +1,7 @@
 #include "plpch.h"
 #include "WindowsWindow.h"
 
+#include <glad/glad.h>
 #include "GLFW/glfw3.h"
 
 #include "Pulio/Core/Log.h"
@@ -37,10 +38,9 @@ namespace Pulio {
 		// by default, set vsync to be true
 		SetVSync();
 
-		// TODO: create windows window
 		if (!glfwInit())
 		{
-			// TODO: error handling
+			PULIO_LOG_ERROR("GLFW initailization failed.");
 			return;
 		}
 
@@ -56,7 +56,11 @@ namespace Pulio {
 
 		glfwMakeContextCurrent(m_Window);
 
-		// TODO: initialize glad
+		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+		{
+			PULIO_LOG_ERROR("Failed to initialize GLAD");
+			return;
+		}
 
 		PULIO_LOG_INFO("Succesfully opened GLFW window!");
 	}
@@ -77,7 +81,7 @@ namespace Pulio {
 
 	void WindowsWindow::SetCallbackMethod(const WindowEventCallback& callbackMethod)
 	{
-		// TODO: assert there is a window
+		PL_ASSERT(m_Window, "Tried to set callback method on a window that doesn't exist.");
 
 		WindowsWindowCallbackData* data = new WindowsWindowCallbackData(this, callbackMethod);
 		glfwSetWindowUserPointer(m_Window, reinterpret_cast<void*>(data));
